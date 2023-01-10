@@ -1,0 +1,153 @@
+.majorChoice{
+    position: relative;
+    width: 100%;
+    height: 180px;
+    background-image: url('../../images/parallax-light.jpg');
+    background-attachment: fixed;
+    background-size: cover;
+}
+.majorChoiceIcon{
+    position: absolute;
+    left: 50%;
+    top:5%;
+    transform: translateX(-50%) translateY(50%);
+    width: 100%;
+    position: relative;
+}
+.majorChoiceItems{
+    display: flex;
+    flex-direction: row;
+    justify-content:space-between;
+    margin: 0 91px 0px 91px;
+}
+
+.icon{
+    background-color: rgb(146, 27, 27);
+    color:white;
+    font-size:82px;
+    border-radius: 100px;
+}
+
+@media only screen and (max-width: 420px) {
+   
+    .majorChoice{
+        position: relative;
+        height: 490px;
+        overflow: hidden;
+    }
+    .majorChoiceIcon{
+        position: absolute;
+        text-align: center;
+        top:1%;
+        bottom: 1%;
+        transform: translateX(-10%) translateY(2%);
+        width: 100%;
+    }
+    .majorChoiceItems{
+        display: flex;
+        flex-direction: column;
+        gap:10px;
+        margin: 0;
+    }
+    .majorChoiceItems span{
+        width: 18%;
+        font-size:60px;
+    }
+}
+@media only screen and (min-width: 421px) and (max-width:599px) {
+    .majorChoice{
+        position: relative;
+        height: 490px;
+        overflow: hidden;
+    }
+    .majorChoiceIcon{
+        position: absolute;
+        text-align: center;
+        top:1%;
+        bottom: 1%;
+        transform: translateX(-10%) translateY(2%);
+        width: 100%;
+    }
+    .majorChoiceItems{
+        display: flex;
+        flex-direction: column;
+        gap:10px;
+        margin: 0;
+    }
+    .majorChoiceItems span{
+        width: 18%;
+        font-size:60px;
+    }
+}
+
+/* Extra small devices (phones, 600px and down) */
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) and (max-width:767px) {
+    .majorChoice{
+        height: 490px;
+        overflow: hidden;
+    }
+    .majorChoiceIcon{
+        position: absolute;
+        text-align: center;
+        left: 50%;
+        top:1%;
+        bottom: 1%;
+        transform: translateX(-10%) translateY(2%);
+        width: 100%;
+    }
+    .majorChoiceItems{
+        display: flex;
+        flex-direction: column;
+        gap:10px;
+        margin: 0;
+    }
+    .majorChoiceItems span{
+        width: 18%;
+        font-size:82px;
+    }
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+    .signInUp{
+        display: none;
+    }
+    .contents{
+        display: none
+    }
+    .banner form{
+        margin-top: -12%;
+        margin-bottom: 6%;
+    }
+    .banner form input{
+        width: 45vw;
+    }
+    .content{
+        margin-top:-22px;
+    }
+    .content h4{
+        font-size: 24px;
+        margin-bottom:20px;
+    }
+    .courses{
+        margin-top: -14%;
+        position:absolute;
+    }
+
+    .navbar-brand img{
+        width: 84%;
+    }
+    
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+    
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+    
+}

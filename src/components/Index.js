@@ -4,25 +4,30 @@ import AllCourseList from './AllCourseList';
 import banner from './assets/images/fullscreen-slider.jpg';
 import Banner from './Banner';
 import Button from './Button';
+import AllCourses from './carousel/Testing';
+import UpComingCourses from './carousel/UpComingCourse';
+import Contact from './Contact';
 import Container from './Container';
 import Content from './Content';
 import CourseDetails from './CourseDetails';
 import Courses from './Courses';
+import Footer from './Footer';
 import Form from './Form';
 import Header from './Header';
 import Image from './Image';
 import Input from './Input';
 import MajorChoice from './MajorChoice';
-import Navbar from './Navbar';
+import Navbars from './Navbar';
 import SignInUp from './SignInUp';
-import UpComingEvent from './UpComingEvent';
 import WorksWith from './WorksWith';
+
 export default function Index(){
+    
     return (
         <>
             <Header>
                 <Image src={banner} banner_img="banner_img" />
-                <Navbar />
+                <Navbars />
                 <Banner banner="banner">
                     <SignInUp signInUp="text-center signInUp">
                         <Link to="#">Login </Link>
@@ -63,85 +68,14 @@ export default function Index(){
 
                 <WorksWith worksWith="worksWith d-flex flex-column flex-md-row gap-3 justify-content-center text-center my-3" />
                 <CourseDetails courseDetails="courseDetails"/>
-
-                {/* Owl Carousel  */}
-                <div class="owl-carousel mt-4">
-                    <div class="upComingItems">
-                        <img src="assets/images/course14-573x403.jpg" alt="carousel_Item" />
-                        <div class="courseFee mt-3">
-                            <h3>Free</h3>
-                            <a href="">Introduction to Calculus</a>  
-                            <span>Basic |</span>
-                            <span>Questions:20</span>
-                            <div class="time d-flex justify-content-between">
-                                <div class="d-flex gap-1">
-                                    <span class="material-symbols-outlined ">
-                                        schedule
-                                    </span>
-                                    <span class="">03:15</span>
-                                </div>
-                                <div class="courseRating">
-            
-                                    <span class="material-symbols-outlined">
-                                        star
-                                        </span>
-                                    <span class="material-symbols-outlined">
-                                        star
-                                    </span>
-                                    <span class="material-symbols-outlined">
-                                        star
-                                    </span>
-                                    <span class="material-symbols-outlined">
-                                        star
-                                    </span>
-                                    <span class="material-symbols-outlined">
-                                        star
-                                    </span>
-                                </div>
-                            </div>  
-                        </div>
-                    </div>
-                    <div class="upComingItems">
-                        <img src="assets/images/course14-573x403.jpg" alt="carousel_Item" />
-                        <div class="courseFee mt-3">
-                            <h3>Free</h3>
-                            <a href="">Introduction to Calculus</a>  
-                            <span>Basic |</span>
-                            <span>Questions:20</span>
-                            <div class="time d-flex justify-content-between">
-                                <div class="d-flex gap-1">
-                                    <span class="material-symbols-outlined ">
-                                        schedule
-                                    </span>
-                                    <span class="">03:15</span>
-                                </div>
-                                <div class="courseRating">
-            
-                                    <span class="material-symbols-outlined">
-                                        star
-                                        </span>
-                                    <span class="material-symbols-outlined">
-                                        star
-                                    </span>
-                                    <span class="material-symbols-outlined">
-                                        star
-                                    </span>
-                                    <span class="material-symbols-outlined">
-                                        star
-                                    </span>
-                                    <span class="material-symbols-outlined">
-                                        star
-                                    </span>
-                                </div>
-                            </div>  
-                        </div>
-                    </div>
-                </div>
-                {/* Finished Owl Carousel */}
-                {/* <OwlCarousel owlClassName="owl-carousel mt-4"/> */}
-                {/* <MajorChoice majorChoice="majorChoice text-center"/> */}
-                {/* <UpComingEvent/> */}
-            </Container>           
+                <AllCourses />
+            </Container>   
+            <MajorChoice majorChoice="majorChoice text-center"/>        
+            <Container>
+                <UpComingCourses />
+            </Container>
+            <Contact/>
+            <Footer/>
         </>
     );
     

@@ -1,53 +1,80 @@
 import logo from './assets/images/logo.png';
 import Image from "./Image";
-export default function Navbar(){
-    return (
-        <nav class="navbar fixed-top" id="navBar">
-            <div class="container">
-                <a class="navbar-brand" href="#">
-                <Image src={logo} />
-                </a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasRight">
-                <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
-                <div class="offcanvas-header">
-                    <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Menu</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-                </div>
-                <div class="offcanvas-body">
-                    
-                    <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
-                        <div class="d-flex justify-content-center mb-4">
-                            <li class="">
-                                <a class="nav-link login" href="login.html">Login</a>
-                            </li>
-                            <li class="">
-                                <a class="nav-link signUp" href="reg.html">SignUp</a>
-                            </li>
-                        </div>
-                        <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="#">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Course</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Contact</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Pages</a>
-                        </li>
+import { useEffect,useState } from 'react';
+import Container from 'react-bootstrap/Container';
+import Form from 'react-bootstrap/Form';
+import Nav from 'react-bootstrap/Nav';
+import Navbar from 'react-bootstrap/Navbar';
+import NavDropdown from 'react-bootstrap/NavDropdown';
+import Offcanvas from 'react-bootstrap/Offcanvas';
+import { useRef } from "react";
+import { Link } from 'react-router-dom';
+// import DropDownMenuSpace from './dropDownMenuSpace';
 
-                        <form class="d-flex mt-4" role="search">
-                            <input class="form-control" type="search" placeholder="Search" aria-label="Search"/>
-                            <button class="btn btn-outline-success" type="submit">Search</button>
-                        </form>
-                    </ul>
+function Navbars() {
+  const [scrolled, setScrolled] = useState(false);
+  useEffect(() => {
+    window.onscroll = function() {
+      if (window.scrollY > 20) {
+        setScrolled(true);
+      } else {
+        setScrolled(false);
+      }
+    };
+  }, []);
+  return (
+    <>
+      {[false].map((expand) => (
+        <Navbar key={expand} expand={expand} className={`fixed-top ${scrolled ? "navbar-container floatingNav" : "navbar-container"}`}>
+          <Container>
+            <Navbar.Brand href="#">
+                <Image src={logo} />
+            </Navbar.Brand>
+            <Navbar.Toggle aria-controls={`offcanvasNavbar-expand-${expand}`} />
+            <Navbar.Offcanvas
+              id={`offcanvasNavbar-expand-${expand}`}
+              aria-labelledby={`offcanvasNavbarLabel-expand-${expand}`}
+              placement="end"
+            >
+              <Offcanvas.Header closeButton>
+                <Offcanvas.Title id={`offcanvasNavbarLabel-expand-${expand}`}>
+                  Menu
+                </Offcanvas.Title>
+              </Offcanvas.Header>
+              <Offcanvas.Body>
+                <Nav className="justify-content-end flex-grow-1 pe-3">
+                  <Nav.Link href="#action1">Home</Nav.Link>
+                  <Nav.Link href="#action2">Link</Nav.Link>
+                  <NavDropdown
+                    title="Dropdown"
+                    id={`offcanvasNavbarDropdown-expand-${expand}`}
+                    className="navbarDropDown"
+                  >
+                     <ul class="list-group">
+                        <li class="list-group-item"><Link to="">All Courses</Link></li>
+                        <li class="list-group-item"><Link to="">Note</Link></li>
+                     </ul>
+
+                    {/* <NavDropdown.Item href="#action3">Action</NavDropdown.Item>
+                    <NavDropdown.Item href="#action4">
+                      Another action
+                    </NavDropdown.Item>
+                    <NavDropdown.Divider />
+                    <NavDropdown.Item href="#action5">
+                      Something else here
+                    </NavDropdown.Item> */}
+                  </NavDropdown> 
+                  <Nav.Link href="#action4">Home</Nav.Link>
+                  <Nav.Link href="#action5">Link</Nav.Link>
+                </Nav>
                 
-                </div>
-                </div>
-            </div>
-        </nav>
-    );
+              </Offcanvas.Body>
+            </Navbar.Offcanvas>
+          </Container>
+        </Navbar>
+      ))}
+    </>
+  );
 }
+
+export default Navbars;

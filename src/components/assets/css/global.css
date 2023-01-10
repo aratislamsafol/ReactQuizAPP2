@@ -47,8 +47,23 @@
         font-size:21px;
         padding:6px
     }
+    .list-group-item{
+        border:none;
+    }
+    .navbarDropDown{
+        border:none !important;
+    }
+    .dropdown{
+        margin-left:0 !important;
+        padding-left:0 !important;
+    }
+  
+    .dropdown-menu{
+        --bs-dropdown-border-color: none;
+        padding:0;
+        margin:0;
+    }
     .nav-item{
-        background-color: rgb(11, 153, 11);
         margin-bottom: 10px;
         padding:6px;
         font-weight: 600;
@@ -56,11 +71,11 @@
         transition: 0.4s;
     }
     .nav-item a{
-        color:white;
+        /* color:white; */
+        text-decoration: none;
         transition: 0.4s;
     }
     .nav-item:hover{
-        background-color: rgb(238, 129, 26);
         transition: 0.4s;
     }
     .nav-item:hover.nav-item a{
@@ -193,28 +208,23 @@
         transition: .3s all;
     }
     /* courseItems */
-    .courseFee a{
-        text-decoration:  none;
-        font-size: 20px;
-        color: rgb(2, 100, 92);
-        font-weight: 600;
-    }
-    .courseItems,.upComingItems{
+    .slick-slide {
+        margin-left:27px;
+      }
+    
+      /* the parent */
+      .slick-list {
+        margin-left:-27px;
+      }
+    .courseItems{
         display: flex;
         flex-direction: column;
-    }
-    
-    .slider_nav{
-        margin-top: 10px;
-    }
-    .am-prev,.am-next{
-        padding: 10px;
-        background-color:var(--buttonColor);
-        color:white;
+        padding:10px;
+        gap:50px;
+        text-align: left;
+        box-shadow: 3px 3px 3px 3px rgba(90, 90, 156, 0.2);
+        border-radius: 6px;
         border:none;
-        margin-right: 5px;
-        margin-top:10px;
-       
     }
     /* Time */
     .time{
@@ -224,58 +234,16 @@
     .time span{
         font-size: 24px;
     }
-    .courseRating{
-        margin-top: 7px;
-    }
-    .courseRating span{
-        font-size: 16px;
-    }
-    
-    .majorChoice{
-        position: relative;
-        z-index: -1;
-        height: 700px;
-        width: 100%;
-    }
-    .majorChoice img{
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-    }
-    .majorChoiceItems{
-        display: flex;
-        justify-content: space-between;
-    }
-    .majorChoiceItems span{
-        background-color: red;
-        color:white;
-        font-size:80px;
-        border-radius: 100px;
-    }
-    .majorChoiceIcon{
-        position: absolute;
-        top: 10px;
-        left: 50%;
-        transform: translateX(-50%);
-    }
-    .majorChoiceItems{
-        display: flex;
-        flex-direction: column;
-        gap:20px
-    }
-    .majorChoice span{
-        font-size: 64px;
-        background-color: rgb(255, 145, 0);
-        border-radius: 74px;
-        padding: 20px;
-        color: white;
-    }
     /* get in touch */
+    .contact{
+        background-image: url(../images/newsletter-parallax.png);
+        background-attachment: fixed;
+        background-size: cover;
+    }
     .form{
         margin-bottom: 4%;
-    
+        margin-top: 20px;
+
     }
     .form input{
         width: 60vw;
@@ -298,14 +266,47 @@
     /* Shadow */
     #navbar{
         background-color: transparent;
-        transition: 0.4s;
+        transition: 0.6s;
     }
     .floatingNav {
         border-radius: 2px;
-        background-color: rgb(240, 235, 235);
+        background-color: rgb(233, 228, 228);
         box-shadow: 1px 1px #d1cece;
+        transition: 0.6s;
+    }
+    .footer{
+        background-color: #F5E9D4;
+    }
+    
+    .footerAlign{
+        padding:35px 0px 35px 0px; 
+        gap:20px;
+        text-align: justify;
+    }
+    .footerAlign h4{
+        color:rgb(41, 41, 41);
+        font-weight: 400;
+    }
+    .footerAlign p{
+        color:rgb(99, 98, 98);
+        font-weight: 200;
+    }
+    .buttonBorder{
+        border:2px solid rgb(39, 39, 39);
+        text-decoration: none;
+        outline:none;
+        padding:4px 8px;
+        color:#3b3b3b;
+        transition: 0.4s;
+        font-weight: 600;
+        font-size: 14px;
+    }
+    .buttonBorder:hover{
+        background-color: #838C48;
+        color:white;
         transition: 0.4s;
     }
+
     
       
     
@@ -313,6 +314,9 @@
         .content{
             display: none;
         }
+        /* .contact{
+            padding-bottom: 60px;
+        } */
     }
     @media only screen and (min-width: 421px) and (max-width:599px) {
         .signInUp{
@@ -400,19 +404,7 @@
             margin-top: -14%;
             position:absolute;
         }
-        .majorChoiceItems{
-            display: flex;
-            flex-direction: row;
-            /* gap:17px; */
-            justify-content:space-between;
-        }
-        .majorChoice span{
-            font-size: 58px;
-            text-align: center
-        }
-        .majorChoice{
-            height: 180px;
-        }
+        
         .navbar-brand img{
             width: 84%;
         }
@@ -632,4 +624,8 @@
         transition: 0.4s;
         color: white;
         background-color: #DA853D;
+    }
+    .bsClock{
+        margin-top:10px;
+        font-size: 20px;
     }

@@ -1,0 +1,70 @@
+.showCourses{
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.courseFee a{
+    text-decoration:  none;
+    font-size: 20px;
+    color: rgb(2, 100, 92);
+    font-weight: 600;
+    float: left;
+}
+.courseRating{
+    margin-top: 7px;
+}
+.courseRating span{
+    font-size: 16px;
+}
+.upComingEvent{
+    display: flex;
+    flex-direction: column;
+    gap:10px;
+    box-shadow: 3px 3px 3px 3px rgba(90, 90, 156, 0.2);
+    padding:10px;
+    border-radius: 8px;
+}
+.eventDetails{
+    text-align:left;
+    margin-left:10px;
+}
+
+@media only screen and (max-width: 420px) {
+   
+}
+@media only screen and (min-width: 421px) and (max-width:599px) {
+   
+}
+/* Extra small devices (phones, 600px and down) */
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) and (max-width:767px) {
+    
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+    .upComingEvent{
+        display: flex;
+        flex-direction: row;
+        border:1px solid rgb(212, 212, 212);
+    }
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+    .upComingEvent{
+        display: flex;
+        flex-direction: row;
+        border:1px solid rgb(212, 212, 212);
+    }
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+    .upComingEvent{
+        display: flex;
+        flex-direction: row;
+        border:1px solid rgb(212, 212, 212);
+    }
+}
