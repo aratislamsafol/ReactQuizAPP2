@@ -1,0 +1,74 @@
+:root{
+    --courseFee:green;
+    --courseTitle:green;
+    --courseTime:red;
+    --courseRating:rgb(255, 145, 0);
+}
+.items{
+    margin-top: 35px;
+    display: grid;
+    grid-template-areas:'item item item item item';
+    gap:20px
+}
+.item{
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    padding:13px;
+    border-radius: 8px;
+}
+.item h3{
+    color:var(--courseFee)
+}
+.item a{
+    text-decoration:  none;
+    font-size: 20px;
+    color: rgb(2, 100, 92);
+    font-weight: 600;
+}
+.item span{
+    color:blue;
+    font-weight: 600;
+}
+.courseRating span{
+    color:var(--courseRating);
+    font-weight: 400;
+}
+@media only screen and (max-width: 420px) {
+    .items{
+        grid-template-areas:'item';
+    }
+}
+@media only screen and (min-width: 421px) and (max-width:599px) {
+    .items{
+        grid-template-areas:'item';
+    }
+}
+/* Extra small devices (phones, 600px and down) */
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) and (max-width:767px) {
+    .items{
+        grid-template-areas:'item item';
+    }
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+    .items{
+        grid-template-areas:'item item item';
+    }
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+    .items{
+        grid-template-areas:'item item item item';
+    }
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+    .items{
+        grid-template-areas:'item item item item item';
+    }
+}
+

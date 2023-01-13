@@ -1,0 +1,27 @@
+.miniplayer{
+    position: relative;
+    width: 75px;
+    border-radius: 50%;
+    background-color: rgb(255, 115, 0);
+    height: 75px;
+    margin-top: -4%;
+    transition: 0.3s;
+}
+.miniplayer:hover{
+    background-color: green;
+    transition: 0.3s;
+}
+.playerIcon{
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform: translateX(-50%) translateY(-50%);
+    color:rgb(255, 255, 255);
+    font-size: 23px;
+}
+.playerIcon:hover{
+    color:rgb(255, 115, 0);
+}
+
+
+
