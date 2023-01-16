@@ -8,18 +8,21 @@ import Login from './components/pages/Login';
 import Registration from './components/pages/Reg';
 import Quiz from './components/pages/Quiz';
 import Success from './components/pages/Success';
+import { AuthProvider } from './context/AuthContext';
 function App() {
   return (
     <div className="App">
-      <Router>
-          <Routes>
-            <Route exact path="" element={<Home/>}></Route>
-            <Route exact path="/allcourse/" element={<AllCourse/>}></Route>
-            <Route exact path="/login/" element={<Login/>}></Route>
-            <Route exact path="/reg/" element={<Registration/>}></Route>
-            <Route exact path="/quiz/" element={<Quiz/>}></Route>
-            <Route exact path="/result/" element={<Success/>}></Route>
-          </Routes>
+        <Router>
+            <AuthProvider>
+                <Routes>
+                  <Route exact path="/" element={<Home/>}></Route>
+                  <Route exact path="/allcourse/" element={<AllCourse/>}></Route>
+                  <Route exact path="/login/" element={<Login/>}></Route>
+                  <Route exact path="/reg/" element={<Registration/>}></Route>
+                  <Route exact path="/quiz/" element={<Quiz/>}></Route>
+                  <Route exact path="/result/" element={<Success/>}></Route>
+                </Routes>  
+            </AuthProvider>   
         </Router>
     </div>
   );

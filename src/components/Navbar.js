@@ -27,7 +27,7 @@ function Navbars() {
       {[false].map((expand) => (
         <Navbar key={expand} expand={expand} className={`fixed-top ${scrolled ? "navbar-container floatingNav" : "navbar-container"}`}>
           <Container>
-            <Navbar.Brand href="#">
+            <Navbar.Brand href="/">
                 <Image src={logo} />
             </Navbar.Brand>
             <Navbar.Toggle aria-controls={`offcanvasNavbar-expand-${expand}`} />
@@ -43,7 +43,11 @@ function Navbars() {
               </Offcanvas.Header>
               <Offcanvas.Body>
                 <Nav className="justify-content-end flex-grow-1 pe-3">
-                  <Nav.Link href="#action1">Home</Nav.Link>
+                  <div className='d-flex flex-row text-center justify-content-center gap-2'>
+                    <Nav.Link href="/login/" className="login">Login</Nav.Link>
+                    <Nav.Link href="/reg/" className="signUp">SignUp</Nav.Link>
+                  </div>
+                  <Nav.Link href="/">Home</Nav.Link>
                   <Nav.Link href="#action2">Link</Nav.Link>
                   <NavDropdown
                     title="Dropdown"

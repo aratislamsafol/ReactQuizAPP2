@@ -30,8 +30,8 @@ export default function Index(){
                 <Navbars />
                 <Banner banner="banner">
                     <SignInUp signInUp="text-center signInUp">
-                        <Link to="#">Login </Link>
-                        <Link to="#">SignUp </Link>
+                        <Link to="/login">Login </Link>
+                        <Link to="/reg/">SignUp </Link>
                     </SignInUp>
                     
                     <Form>

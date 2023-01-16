@@ -39,14 +39,17 @@
         font-weight: 700;
         font-size:21px;
         color:green;
-        padding:6px
+        padding:6px;
+        text-decoration: none;
     }
     .signUp{
         font-weight: 700;
         color:green;
         font-size:21px;
-        padding:6px
+        padding:6px;
+        text-decoration: none;
     }
+    /* .loginClass{} */
     .list-group-item{
         border:none;
     }
