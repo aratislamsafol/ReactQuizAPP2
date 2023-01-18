@@ -15,10 +15,12 @@ export default function FormReg(){
 
     const [error,setError]=useState();
     const [loading,setLoading]=useState();
+    const [emailDone,setEmailDone]=useState();
 
     const {Signup}=useAuth();
     const Navigate=useNavigate();
 
+    console.log(Signup);
     async function handleSubmit(e){
         e.preventDefault();
 
@@ -29,21 +31,22 @@ export default function FormReg(){
         try{
             setError("");
             setLoading(true);
+            setEmailDone(true);
             await Signup(email,password,username);
             Navigate("/");
         }catch(err){
             console.log(err);
             setLoading(false);
             setError("Failed to create or loading");
+            setEmailDone("Email Is Already Done");
         }
     }
-
 
     return (
         <Form class="mx-1 mx-md-4" onSubmit={handleSubmit} >
             <InputItem type="text" title="Your Name" labelClass="form-label" value={username} onChange={(e)=>setUsername(e.target.value)} required />
 
-            <InputItem type="email" title="Your Email" labelClass="form-label" value={email} onChange={(e)=>setEmail(e.target.value)} required/>
+            <InputItem type="text" title="Your Email" labelClass="form-label" value={email} onChange={(e)=>setEmail(e.target.value)} required/>
 
             <InputItem type="password" title="password" labelClass="form-label" value={password} onChange={(e)=>setPassword(e.target.value)} required/>
 
@@ -55,6 +58,7 @@ export default function FormReg(){
                 <Button type="submit" disabled={loading} class="btn btn-primary btn-lg">Register</Button>
             </div>
             {error && <p className='error' style={{color:'white', backgroundColor:'#F08080',padding:'10px',borderRadius:'6px',marginTop:'10px'}}>{error}</p>}
+            {emailDone && <p className='error' style={{color:'white', backgroundColor:'#F08080',padding:'10px',borderRadius:'6px',marginTop:'10px'}}>{emailDone}</p>}
         </Form>
     );
 }

@@ -1,5 +1,6 @@
 
 import { Link } from 'react-router-dom';
+import { useAuth } from '../context/AuthContext';
 import AllCourseList from './AllCourseList';
 import banner from './assets/images/fullscreen-slider.jpg';
 import Banner from './Banner';
@@ -22,7 +23,7 @@ import SignInUp from './SignInUp';
 import WorksWith from './WorksWith';
 
 export default function Index(){
-    
+    // const {}=useAuth();
     return (
         <>
             <Header>

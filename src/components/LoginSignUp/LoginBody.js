@@ -1,7 +1,6 @@
 import classes from '../assets/css/module/Login/login.module.css';
 import loginImage from '../assets/images/Login/draw2.webp';
 import Image from "../Image";
-import Input from "./Input";
 import SignInForm from "./SignInForm";
 export default function LoginBody(){
     return (

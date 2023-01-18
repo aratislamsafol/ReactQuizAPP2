@@ -1,4 +1,3 @@
-import Question from '../Quiz/Question';
 import QuizBody from '../Quiz/QuizBody';
 import {BsQuestionCircleFill} from 'react-icons/bs';
 export default function CorrectAnswer(){
