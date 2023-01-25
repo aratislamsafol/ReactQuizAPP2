@@ -1,13 +1,14 @@
 
 import { AiFillStar } from 'react-icons/ai';
 import { BsClockHistory } from 'react-icons/bs';
+import { Link } from 'react-router-dom';
 import carouselCss from './assets/css/module/carousel.module.css';
-export default function CourseFee(){
+export default function CourseFee({title,noq,id}){
     return <div className={carouselCss.courseFee}>
     <h3>Free</h3>
-    <a href="">Introduction to Calculus</a>    
+    {noq>0?<Link to={`/quiz/${id}`}>{title}</Link>:<p>{title}</p>}
     <span>Basic |</span>
-    <span>Questions:20</span>
+    <span>{noq}</span>
     <div className="time d-flex justify-content-between">
         <div class="d-flex gap-1">
             <BsClockHistory class="bsClock"/>

@@ -12,7 +12,11 @@ import "swiper/css";
 import "swiper/css/free-mode";
 import { Swiper, SwiperSlide } from 'swiper/react';
 import carouselCss from '../assets/css/module/carousel.module.css';
+import { Link } from 'react-router-dom';
+import Href from '../Href';
+import AllCourse from '../hooks/AllCourse';
 export default function AllCourses(){
+  const {course}=AllCourse();
   return (
     <div className='container py-4 px-4 justify-content-center'>
       <Swiper
@@ -48,12 +52,13 @@ export default function AllCourses(){
           }
         }
       >
-        <SwiperSlide>
+        {course.map((crs,index)=>(
+          <SwiperSlide>
           <div className={carouselCss.showCourses}>
-              <Image src={img2} banner_img="img-fluid rounded" alt="items"/>
+              <Image src={`http://img.youtube.com/vi/${crs.youtubeID}/maxresdefault.jpg`} banner_img="img-fluid rounded" alt="items"/>
               <div className={carouselCss.courseFee}>
                   <h3>Free</h3>
-                  <a href="">Introduction to Calculus</a>    
+                  <Href src={`/quiz/${crs.youtubeID}`}>{crs.title}</Href>    
                   <span>Basic |</span>
                   <span>Questions:20</span>
                   <div class="time d-flex justify-content-between">
@@ -72,33 +77,8 @@ export default function AllCourses(){
               </div>
           </div>  
         </SwiperSlide>
-        <SwiperSlide>
-        <div className={carouselCss.showCourses}>
-              <Image src={img2} banner_img="img-fluid rounded" alt="items"/>
-              <CourseFee/>
-          </div>  
-        </SwiperSlide>
+        ))}
         
-        <SwiperSlide>
-        <div className={carouselCss.showCourses}>
-              <Image src={img2} banner_img="img-fluid rounded" alt="items"/>
-              <CourseFee/>
-          </div>  
-        </SwiperSlide>
-
-        <SwiperSlide>
-        <div className={carouselCss.showCourses}>
-              <Image src={img2} banner_img="img-fluid rounded" alt="items"/>
-              <CourseFee/>
-          </div>  
-        </SwiperSlide>
-
-        <SwiperSlide>
-        <div className={carouselCss.showCourses}>
-              <Image src={img2} banner_img="img-fluid rounded" alt="items"/>
-              <CourseFee/>
-          </div>  
-        </SwiperSlide>
         ...
       </Swiper>
     </div>

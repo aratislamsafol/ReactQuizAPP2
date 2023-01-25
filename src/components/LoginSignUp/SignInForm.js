@@ -4,6 +4,7 @@ import { useAuth } from "../../context/AuthContext";
 import Button from "../Button";
 import CheckBox from '../CheckBox';
 import Form from "../Form";
+import AllCourse from "../hooks/AllCourse";
 import InputItem from './InputItem';
 import LoginWithSocial from './LoginWithSocial';
 export default function SignInForm(){
@@ -12,7 +13,6 @@ export default function SignInForm(){
     const [error,setError]=useState("");
     const [loading,setLoading]=useState();
     const [agree,setAgree]=useState();
-
     const {Login}=useAuth();
     // const {ResetPassword}=useAuth();
     const navigate=useNavigate();
@@ -23,7 +23,7 @@ export default function SignInForm(){
             setError("");
             setLoading(true);
             await Login(email,password);
-            navigate("/quiz");
+            navigate("/allCourse");
         }catch(err){
             setError("Password or Email Incorrect");
             setLoading(false);

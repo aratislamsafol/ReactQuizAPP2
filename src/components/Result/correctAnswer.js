@@ -1,10 +1,18 @@
 import QuizBody from '../Quiz/QuizBody';
 import {BsQuestionCircleFill} from 'react-icons/bs';
-export default function CorrectAnswer(){
+import { Fragment } from 'react';
+
+export default function CorrectAnswer({answer=[]}){
     return (
         <>
             <h5><span class="material-symbols-outlined margin"><BsQuestionCircleFill className='text-success'/></span>&nbsp;Here Goes to Questions </h5>
-            <QuizBody/>
+            <Fragment>
+                {answer.map((ans)=>(
+                    <QuizBody input={false} options={ans.options} title={ans.title}/>
+                ))}
+            </Fragment>
+            
+            
         </>
     );
 }

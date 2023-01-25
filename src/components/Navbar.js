@@ -1,12 +1,13 @@
-import logo from './assets/images/logo.png';
-import Image from "./Image";
-import { useEffect,useState } from 'react';
+import { useEffect, useState } from 'react';
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import Offcanvas from 'react-bootstrap/Offcanvas';
 import { Link } from 'react-router-dom';
+import { useAuth } from '../context/AuthContext';
+import logo from './assets/images/logo.png';
+import Image from "./Image";
 // import DropDownMenuSpace from './dropDownMenuSpace';
 
 function Navbars() {
@@ -20,6 +21,7 @@ function Navbars() {
       }
     };
   }, []);
+  const {currentUser,Logout}=useAuth();
   return (
     <>
       {[false].map((expand) => (
@@ -42,8 +44,17 @@ function Navbars() {
               <Offcanvas.Body>
                 <Nav className="justify-content-end flex-grow-1 pe-3">
                   <div className='d-flex flex-row text-center justify-content-center gap-2'>
-                    <Nav.Link href="/login/" className="login">Login</Nav.Link>
-                    <Nav.Link href="/reg/" className="signUp">SignUp</Nav.Link>
+                    {
+                      currentUser?<>
+                      <span className=''><i className="fa-regular fa-user"></i></span>
+                      <span>{currentUser.displayName}</span>
+                      <Link href="" onClick={Logout}>Logout</Link>
+                      </>:<>
+                        <Nav.Link href="/login/" className="login">Login</Nav.Link>
+                        <Nav.Link href="/reg/" className="signUp">SignUp</Nav.Link>
+                      </>
+                    }
+                    
                   </div>
                   <Nav.Link href="/">Home</Nav.Link>
                   <Nav.Link href="#action2">Link</Nav.Link>

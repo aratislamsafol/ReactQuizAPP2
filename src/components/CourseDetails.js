@@ -5,6 +5,6 @@ export default function CourseDetails({courseDetails,children}){
     return <div className={courseDetails}>
         <h3 class="text-uppercase">Courses</h3>
         <CourseDetailsInto couresDetailsInto="couresDetailsInto"/>
-        <Href to="" className="text-uppercase allCourse">View All Courses</Href>
+        <Href src="/allCourse" className="text-uppercase allCourse">View All Courses</Href>
     </div>
 }

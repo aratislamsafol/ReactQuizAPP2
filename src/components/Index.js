@@ -1,4 +1,3 @@
-
 import { Link } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
 import AllCourseList from './AllCourseList';
@@ -23,17 +22,22 @@ import SignInUp from './SignInUp';
 import WorksWith from './WorksWith';
 
 export default function Index(){
-    // const {}=useAuth();
+    const {currentUser,Logout}=useAuth();
     return (
         <>
             <Header>
                 <Image src={banner} banner_img="banner_img" />
                 <Navbars />
                 <Banner banner="banner">
-                    <SignInUp signInUp="text-center signInUp">
+                    {currentUser?
+                    <div class="text-center signInUp">
+                        <span>{currentUser.displayName}</span>
+                        <Link href="" onClick={Logout}>Logout</Link>
+                    </div>
+                     :<SignInUp signInUp="text-center signInUp">
                         <Link to="/login">Login </Link>
                         <Link to="/reg/">SignUp </Link>
-                    </SignInUp>
+                    </SignInUp>}
                     
                     <Form>
                         <Input type="text" placeholder="Search Course" />
@@ -45,7 +49,7 @@ export default function Index(){
                     
                     <Content content="content">
                         <h4>We have the largest collection of courses </h4>
-                        <a href="courses.html">View All Courses</a>
+                        <Link to="./allCourse">View All Courses</Link>
                     </Content>
                 </Banner>
                 <Courses courses="courses d-none d-md-block">
@@ -58,7 +62,7 @@ export default function Index(){
             <Container classes="container text-center mt-3 mt-md-5">
                 <Content content="contents">
                     <h5>We have the largest collection of courses </h5>
-                    <Link to="">View All Courses</Link>
+                    <Link to="./allCourse">View All Courses</Link>
                 </Content>
 
                 <Courses courses="courses d-md-none">

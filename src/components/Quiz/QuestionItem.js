@@ -1,11 +1,23 @@
-import Label from "../Label"
 import classes from '../assets/css/module/Quiz/quiz.module.css';
 import Input from "../Input";
-export default function QuestionItem(){
-    return <div className={classes.item}>
-         <Input class="form-check-input me-2" type="checkbox" value=""/>
+import Label from "../Label";
 
-        <Label title="New Question1" labelClass="form-check-label"></Label>
-    
+export default function QuestionItem({input,option,handeler,index}){
+    return <div className={`${
+        option.correct
+          ? classes.correct
+          : option.checked
+          ? classes.wrong
+          : null
+      } ${classes.item}`} key={index}>
+        {input?<>
+            
+            <Input key={index} value={index} class="form-check-input me-2"  type="checkbox" checked={option.checked} onChange={(e)=>handeler(e,index)}/>
+       
+            <Label title={option.title} style={{color:'bule'}}  labelClass="form-check-label"></Label>
+        </>:<>
+            <Input key={index} className="form-check-input me-2" type="checkbox" defaultChecked={option.checked} disabled/>
+            <Label title={option.title} labelClass="form-check-label" ></Label>
+        </>}
     </div>
 }
