@@ -50,7 +50,7 @@ export default function Result(){
                         <Image src={img} banner_img="img-fluid"/>
                     </div>
                 </div>   
-                <CorrectAnswer answer={answers}/>
+                <CorrectAnswer answer={answers} id={id}/>
             </Container>
             )}
         </>

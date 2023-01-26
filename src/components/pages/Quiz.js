@@ -94,9 +94,9 @@ export default function Quiz(){
             {!loading && !error && qna && qna.length>0 && (
                 <>
                     <Navbars/>
-                    <context.Provider value={{id:id}}>
-                        <QuizBody title={qna[currentQuestion].title} handeler={handeler} options={qna[currentQuestion].options} input={true}/>
-                    </context.Provider>
+                    {/* <context.Provider value={{idMini:id}}> */}
+                        <QuizBody title={qna[currentQuestion].title} handeler={handeler} options={qna[currentQuestion].options} input={true} id={id}/>
+                    {/* </context.Provider> */}
 
                     <context.Provider value={{complete:complete,next:nextQuestion,prev:prevQuestion,submit:submit}}>
                         <QuizFooter />
