@@ -46,7 +46,7 @@ export default function SearchBar(){
             <li>{item}</li>
             ))}
         </ul> */}
-        {data}
+        {/* {data} */}
     </div>
         
     </>
