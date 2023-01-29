@@ -40,14 +40,14 @@ export default function SearchBar(){
             <CiSearch/>
         </Button>
     </Form>
-    <div className="d-flex justify-content-center" style={{height:"60px"}}>
+    {/* <div className="d-flex justify-content-center" style={{height:"60px"}}> */}
         {/* <ul>
             {data.map((item) => (
             <li>{item}</li>
             ))}
         </ul> */}
         {/* {data} */}
-    </div>
+    {/* </div> */}
         
     </>
     
