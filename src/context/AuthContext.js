@@ -106,7 +106,7 @@ export function AuthProvider({children}){
                 // The AuthCredential type that was used.
                 const credential = FacebookAuthProvider.credentialFromError(error);
 
-                console.log("error in facebook login");
+                console.log("error in Twitter login");
             });
     }
 

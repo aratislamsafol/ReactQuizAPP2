@@ -18,6 +18,7 @@ import Image from './Image';
 import Input from './Input';
 import MajorChoice from './MajorChoice';
 import Navbars from './Navbar';
+import SearchBar from './Search';
 import SignInUp from './SignInUp';
 import WorksWith from './WorksWith';
 
@@ -39,13 +40,7 @@ export default function Index(){
                         <Link to="/reg/">SignUp </Link>
                     </SignInUp>}
                     
-                    <Form>
-                        <Input type="text" placeholder="Search Course" />
-                        <Button type="submit"><span class="material-symbols-outlined ">
-                            search
-                            </span>
-                        </Button>
-                    </Form>
+                    <SearchBar/>
                     
                     <Content content="content">
                         <h4>We have the largest collection of courses </h4>

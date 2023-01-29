@@ -21,7 +21,7 @@ export default function AllCourse(){
     
                 const snapshot=await get(queryCourse);
                 setLoading(false);
-                console.log(snapshot.val());
+                // console.log(snapshot.val());
                 if(snapshot.exists()){
                     setCourese((prevVideos)=>{
                         return [...prevVideos,...Object.values(snapshot.val())];
